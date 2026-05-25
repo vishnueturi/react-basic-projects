@@ -9,12 +9,20 @@ function App() {
 
   //let counter = 15
 
-  const addValue = () => {
+  const addValue = () => { 
     //counter = counter + 1
-    setCounter(prevCounter => prevCounter + 1)
-    setCounter(prevCounter => prevCounter + 1 )
-    setCounter(prevCounter => prevCounter + 1)
-    setCounter(prevCounter => prevCounter + 1)
+
+    setCounter((prevCounter) => {
+      const newValue = prevCounter + 1
+      console.log(counter); // Logs OLD value (closure issue)
+      return newValue
+      
+    })
+
+    // setCounter(prevCounter => prevCounter + 1)
+    // setCounter(prevCounter => prevCounter + 1 )
+    // setCounter(prevCounter => prevCounter + 1)
+    // setCounter(prevCounter => prevCounter + 1)
     
   }
 
